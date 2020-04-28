@@ -5,7 +5,8 @@ const Wrapper = styled.div`
   text-decoration: none;
   outline: none;
   display: inline-block;
-  padding: 15px 30px;
+  margin: 5px;
+  padding: 5px 15px;
   overflow: hidden;
   border: 2px solid;
   border-bottom-width: 4px;
@@ -29,10 +30,15 @@ const Wrapper = styled.div`
       100% {background-position: 50px 0;}
   }
 `
-const Button = () => {
+
+type OwnPropsType = {
+    name: string
+}
+type PropsType = OwnPropsType
+const Button: React.FC<PropsType> = (props) => {
     return (
         <Wrapper>
-            Click me!
+            {props.name}
         </Wrapper>
     )
 }

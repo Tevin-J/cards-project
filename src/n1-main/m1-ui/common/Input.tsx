@@ -7,6 +7,7 @@ const Wrapper = styled.div`
       font-size: 20px;
       font-weight: bold;
       outline: none;
+      margin: 5px;
       padding: 5px;
       border: 2px solid #015668;
       border-bottom-width: 4px;
@@ -14,10 +15,16 @@ const Wrapper = styled.div`
     }
   
 `
-const Input = () => {
+
+type OwnPropsType = {
+    placeholder?: string
+    type?: string
+}
+type PropsType = OwnPropsType
+const Input: React.FC<PropsType> = (props) => {
     return (
         <Wrapper>
-            <input placeholder='Введите текст'/>
+            <input placeholder={props.placeholder} type={props.type}/>
         </Wrapper>
     )
 }

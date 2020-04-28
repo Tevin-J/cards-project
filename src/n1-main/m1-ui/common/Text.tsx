@@ -2,21 +2,20 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  width: 50%;
-  text-align: center;
-  margin: 0 auto;
   font-family: 'Poiret One', cursive;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 20px;
   letter-spacing: 2px;
-  color: #263f44;
+  color: #015668;
 `
-const Text = () => {
+type OwnPropsType = {
+    text: string
+}
+type PropsType = OwnPropsType
+const Text: React.FC<PropsType> = (props) => {
     return (
         <Wrapper>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur earum ipsa itaque iusto laudantium
-            nisi quae quaerat veniam, vitae? Deserunt fuga itaque laudantium optio provident vitae? Animi cumque
-            repellat temporibus?
+            {props.text}
         </Wrapper>
     )
 }

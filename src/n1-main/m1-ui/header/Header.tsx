@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
+import {BUTTON_PATH, INPUT_PATH, LOGIN_PAGE} from "../routes/Routes";
+import MyLink from "../common/MyLink";
 
 const WrapperBlock = styled.div`
   width: 100%;
@@ -10,29 +11,14 @@ const WrapperBlock = styled.div`
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 50px;
-  span {
-    padding-right: 50px;
-    a {
-      font-family: 'Great Vibes', cursive;
-      font-size: 40px;
-      text-decoration: none;
-      color: #fff1cf;
-      :hover {
-        color: #ffd369;
-      }
-    }
-    :hover {
-    cursor: pointer;
-    }
-  }
 `
 
 const Header = () => {
     return (
         <WrapperBlock>
-            <span><NavLink to='button'>button</NavLink></span>
-            <span><NavLink to='input'>input</NavLink></span>
-            <span><NavLink to='text'>text</NavLink></span>
+            <MyLink to={BUTTON_PATH} text={'button'}/>
+            <MyLink to={INPUT_PATH} text={'input'}/>
+            <MyLink to={LOGIN_PAGE} text={'log in'}/>
         </WrapperBlock>
     )
 }
