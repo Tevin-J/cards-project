@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/cards-project/static/css/main.5252f9c5.chunk.css",
-    "main.js": "/cards-project/static/js/main.66dd8c4e.chunk.js",
-    "main.js.map": "/cards-project/static/js/main.66dd8c4e.chunk.js.map",
+    "main.js": "/cards-project/static/js/main.a04280a2.chunk.js",
+    "main.js.map": "/cards-project/static/js/main.a04280a2.chunk.js.map",
     "runtime-main.js": "/cards-project/static/js/runtime-main.5e71cec1.js",
     "runtime-main.js.map": "/cards-project/static/js/runtime-main.5e71cec1.js.map",
-    "static/js/2.bc7f70b0.chunk.js": "/cards-project/static/js/2.bc7f70b0.chunk.js",
-    "static/js/2.bc7f70b0.chunk.js.map": "/cards-project/static/js/2.bc7f70b0.chunk.js.map",
+    "static/js/2.949e2117.chunk.js": "/cards-project/static/js/2.949e2117.chunk.js",
+    "static/js/2.949e2117.chunk.js.map": "/cards-project/static/js/2.949e2117.chunk.js.map",
     "index.html": "/cards-project/index.html",
-    "precache-manifest.a09bdf795418bb941212d681f82fc003.js": "/cards-project/precache-manifest.a09bdf795418bb941212d681f82fc003.js",
+    "precache-manifest.66e8054fe52c7a1e1934ab49290e8478.js": "/cards-project/precache-manifest.66e8054fe52c7a1e1934ab49290e8478.js",
     "service-worker.js": "/cards-project/service-worker.js",
     "static/css/main.5252f9c5.chunk.css.map": "/cards-project/static/css/main.5252f9c5.chunk.css.map",
-    "static/js/2.bc7f70b0.chunk.js.LICENSE.txt": "/cards-project/static/js/2.bc7f70b0.chunk.js.LICENSE.txt"
+    "static/js/2.949e2117.chunk.js.LICENSE.txt": "/cards-project/static/js/2.949e2117.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5e71cec1.js",
-    "static/js/2.bc7f70b0.chunk.js",
+    "static/js/2.949e2117.chunk.js",
     "static/css/main.5252f9c5.chunk.css",
-    "static/js/main.66dd8c4e.chunk.js"
+    "static/js/main.a04280a2.chunk.js"
   ]
 }
