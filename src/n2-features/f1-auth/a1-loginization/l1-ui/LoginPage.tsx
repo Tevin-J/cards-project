@@ -3,7 +3,7 @@ import Button from "../../../../n1-main/m1-ui/common/Button";
 import Input from "../../../../n1-main/m1-ui/common/Input";
 import Text from "../../../../n1-main/m1-ui/common/Text";
 
-const Login: React.FC = () => {
+const LoginPage: React.FC = () => {
     return (
         <div>
             <Input placeholder={'Введите логин'}/>
@@ -14,4 +14,4 @@ const Login: React.FC = () => {
         </div>
     )
 }
-export default Login
+export default LoginPage
