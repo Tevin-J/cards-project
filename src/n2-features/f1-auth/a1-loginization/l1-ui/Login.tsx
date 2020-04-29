@@ -3,7 +3,7 @@ import Button from "../../../../n1-main/m1-ui/common/Button";
 import Input from "../../../../n1-main/m1-ui/common/Input";
 import Text from "../../../../n1-main/m1-ui/common/Text";
 
-const Login = () => {
+const Login: React.FC = () => {
     return (
         <div>
             <Input placeholder={'Введите логин'}/>

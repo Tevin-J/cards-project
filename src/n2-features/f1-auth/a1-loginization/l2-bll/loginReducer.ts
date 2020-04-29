@@ -1,5 +1,5 @@
-type InitialStateType = {}
-const initialState: InitialStateType = {}
+type InitialStateType = typeof initialState
+const initialState = {}
 const loginReducer = (state: InitialStateType = initialState, action: any): InitialStateType => {
     return state
 }
