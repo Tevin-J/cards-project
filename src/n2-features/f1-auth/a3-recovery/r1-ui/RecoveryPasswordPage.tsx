@@ -1,11 +1,9 @@
 import React from "react";
-import style from './RecoveryPasswordPage.module.css'
+import RecoveryPasswordContainer from "./RecoveryPasswordContainer";
 
 const RecoveryPasswordPage: React.FC = () => {
     return (
-        <div className={style.largeText}>
-            Recovery password page
-        </div>
+        <RecoveryPasswordContainer/>
     )
 }
 export default RecoveryPasswordPage

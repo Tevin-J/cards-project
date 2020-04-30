@@ -1,11 +1,9 @@
 import React from "react";
-import style from './NewPasswordPage.module.css'
+import NewPasswordContainer from "./NewPasswordContainer";
 
 const NewPasswordPage: React.FC = () => {
     return (
-        <div className={style.largeText}>
-            New password page
-        </div>
+        <NewPasswordContainer/>
     )
 }
 export default NewPasswordPage

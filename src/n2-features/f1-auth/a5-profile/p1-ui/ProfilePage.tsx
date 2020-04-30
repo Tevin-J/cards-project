@@ -1,11 +1,9 @@
 import React from "react";
-import style from './ProfilePage.module.css'
+import ProfileContainer from "./ProfileContainer";
 
 const ProfilePage: React.FC = () => {
     return (
-        <div className={style.largeText}>
-            Profile Page
-        </div>
+        <ProfileContainer/>
     )
 }
 export default ProfilePage

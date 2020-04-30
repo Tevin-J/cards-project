@@ -1,11 +1,9 @@
 import React from "react";
-import style from './RegistrationPage.module.css'
+import RegistrationContainer from "./RegistrationContainer";
 
 const RegistrationPage: React.FC = () => {
     return (
-        <div className={style.largeText}>
-            Registration page
-        </div>
+        <RegistrationContainer/>
     )
 }
 export default RegistrationPage
