@@ -1,9 +1,11 @@
 import React from "react";
-import Text from "../../../../n1-main/m1-ui/common/Text";
+import style from './RegistrationPage.module.css'
 
 const RegistrationPage: React.FC = () => {
     return (
-        <Text text={'Registration Page'}/>
+        <div className={style.largeText}>
+            Registration page
+        </div>
     )
 }
 export default RegistrationPage

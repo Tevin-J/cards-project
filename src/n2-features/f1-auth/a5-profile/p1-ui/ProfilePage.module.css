@@ -1,0 +1,3 @@
+.largeText {
+    composes: largeText from '../../../../index.css';
+}

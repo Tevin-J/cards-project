@@ -1,0 +1,11 @@
+.inputStyle input {
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid #015668;
+    border-bottom-width: 4px;
+    background: rgba(255, 255, 255, 1);
+}

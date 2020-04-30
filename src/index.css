@@ -16,3 +16,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.linkInHeader a {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  text-decoration: none;
+  color: #fff1cf;
+}
+.linkInHeader :hover {
+  cursor: pointer;
+  color: #ffd369;
+}
+.linkInPage span a{
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #015668;
+}
+.linkInPage :hover {
+  cursor: pointer;
+  color: red;
+}
+.smallText {
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #015668;
+}
+.mediumText {
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #015668;
+}
+.largeText {
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #015668;
+  padding-bottom: 20px;
+}

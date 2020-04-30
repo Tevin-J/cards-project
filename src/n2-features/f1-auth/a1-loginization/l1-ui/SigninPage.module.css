@@ -1,0 +1,12 @@
+.smallText {
+    composes: smallText from '../../../../index.css';
+}
+.checkboxBlockWrapper {
+    margin: 20px 0 10px 0;
+}
+.linkInPageWrapper {
+    composes: linkInPage from '../../../../index.css';
+}
+.largeText {
+    composes: largeText from '../../../../index.css';
+}

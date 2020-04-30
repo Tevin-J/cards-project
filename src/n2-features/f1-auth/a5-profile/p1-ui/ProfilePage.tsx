@@ -1,9 +1,11 @@
 import React from "react";
-import Text from "../../../../n1-main/m1-ui/common/Text";
+import style from './ProfilePage.module.css'
 
 const ProfilePage: React.FC = () => {
     return (
-        <Text text={'Profile Page'}/>
+        <div className={style.largeText}>
+            Profile Page
+        </div>
     )
 }
 export default ProfilePage

@@ -1,0 +1,3 @@
+.linkInHeaderWrapper {
+    composes: linkInHeader from '../../../../index.css';
+}

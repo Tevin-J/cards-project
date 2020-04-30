@@ -1,9 +1,11 @@
 import React from "react";
-import Text from "../../../../n1-main/m1-ui/common/Text";
+import style from './NewPasswordPage.module.css'
 
 const NewPasswordPage: React.FC = () => {
     return (
-        <Text text={'New Password Page'}/>
+        <div className={style.largeText}>
+            New password page
+        </div>
     )
 }
 export default NewPasswordPage
