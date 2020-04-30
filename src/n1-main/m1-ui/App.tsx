@@ -3,20 +3,17 @@ import Main from "./Main";
 import {HashRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import store from "../m2-bll/store";
-import styled from "styled-components";
+import style from './App.module.css'
 
-const Wrapper = styled.div`
-  text-align: center;
-`
-const App = () => {
+const App: React.FC = () => {
     return (
-        <Wrapper>
+        <div className={style.wrapper}>
             <HashRouter>
                 <Provider store={store}>
                     <Main/>
                 </Provider>
             </HashRouter>
-        </Wrapper>
+        </div>
     );
 }
 
