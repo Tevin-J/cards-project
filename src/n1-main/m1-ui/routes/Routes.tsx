@@ -19,8 +19,8 @@ export const PROFILE_PAGE = '/profile'
 export const Routes: React.FC = () => {
     return (
         <>
-            <Route path={INPUT_PATH} render={() => <Input placeholder={'Введите текст'}/>}/>
-            <Route path={BUTTON_PATH} render={() => <Button name={'Click me!'}/>}/>
+            <Route path={INPUT_PATH} render={() => <Input placeholder={'Введите текст'} value='' onChange={() => {''}}/>}/>
+            <Route path={BUTTON_PATH} render={() => <Button name={'Click me!'} onClick={() => {}}/>}/>
 
             <Route path={SIGN_IN_PAGE} render={() => <SignInPage/>}/>
             <Route path={REGISTRATION_PAGE} render={() => <RegistrationPage/>}/>
