@@ -9,12 +9,16 @@ import MyLink from "../../../../n1-main/m1-ui/common/MyLink/MyLink";
 const RecoveryPassword: React.FC = () => {
     return (
         <div>
-        <div className={style.largeText}>
-            Recovery password page
-            <Input placeholder={'Введите e-mail'} type={'text'} onChange={()=> {}} value={''}/>
-            <Button name={'Отправить'} onClick={()=> {}}/>
-            <MyLink to={SIGN_IN_PAGE} text={'Регистрация'}/>
-        </div>
+            <div className={style.largeText}>
+                Recovery password page
+            </div>
+            <div>
+                <Input placeholder={'Введите e-mail'} type={'text'} onChange={() => {
+                }} value={''}/>
+                <Button name={'Отправить'} onClick={() => {
+                }}/>
+                <MyLink to={SIGN_IN_PAGE} text={'Регистрация'}/>
+            </div>
         </div>
     )
 }
