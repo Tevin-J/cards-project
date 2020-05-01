@@ -12,8 +12,8 @@ const RecoveryPassword: React.FC = () => {
         <div className={style.largeText}>
             Recovery password page
             <Input placeholder={'Введите e-mail'} type={'text'} onChange={()=> {}} value={''}/>
-            <Button name={'Отправить e-mail'} onClick={()=> {}}/>
-            <MyLink to={SIGN_IN_PAGE} text={'Войти'}/>
+            <Button name={'Отправить'} onClick={()=> {}}/>
+            <MyLink to={SIGN_IN_PAGE} text={'Регистрация'}/>
         </div>
         </div>
     )
