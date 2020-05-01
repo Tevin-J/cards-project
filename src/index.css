@@ -17,22 +17,24 @@ code {
     monospace;
 }
 
-.linkInHeader a {
+.linkInHeader div a {
   font-family: 'Great Vibes', cursive;
   font-size: 40px;
   text-decoration: none;
   color: #fff1cf;
+  font-weight: normal;
 }
-.linkInHeader :hover {
+.linkInHeader div a:hover {
   cursor: pointer;
   color: #ffd369;
 }
-.linkInPage span a{
+.linkInPage a{
   font-family: 'Poiret One', cursive;
   font-weight: bold;
   font-size: 20px;
   letter-spacing: 2px;
   color: #015668;
+  text-decoration: none;
 }
 .linkInPage :hover {
   cursor: pointer;

@@ -12,13 +12,27 @@ import MyLink from "../common/MyLink/MyLink";
 const Header: React.FC = () => {
     return (
         <div className={style.wrapper}>
-            <MyLink to={BUTTON_PATH} text={'button'}/>
-            <MyLink to={INPUT_PATH} text={'input'}/>
-            <MyLink to={SIGN_IN_PAGE} text={'sign-in'}/>
-            <MyLink to={REGISTRATION_PAGE} text={'registration'}/>
-            <MyLink to={NEW_PASSWORD_PAGE} text={'new password'}/>
-            <MyLink to={RECOVERY_PAGE} text={'recovery password'}/>
-            <MyLink to={PROFILE_PAGE} text={'profile'}/>
+            <span className={style.linkInHeaderWrapper}>
+                <MyLink to={BUTTON_PATH} text={'button'}/>
+            </span>
+            <span className={style.linkInHeaderWrapper}>
+                <MyLink to={INPUT_PATH} text={'input'}/>
+            </span>
+            <span className={style.linkInHeaderWrapper}>
+                <MyLink to={SIGN_IN_PAGE} text={'sign-in'}/>
+            </span>
+            <span className={style.linkInHeaderWrapper}>
+                <MyLink to={REGISTRATION_PAGE} text={'registration'}/>
+            </span>
+            <span className={style.linkInHeaderWrapper}>
+                <MyLink to={NEW_PASSWORD_PAGE} text={'new password'}/>
+            </span>
+            <span className={style.linkInHeaderWrapper}>
+                <MyLink to={RECOVERY_PAGE} text={'recovery password'}/>
+            </span>
+            <span className={style.linkInHeaderWrapper}>
+                <MyLink to={PROFILE_PAGE} text={'profile'}/>
+            </span>
         </div>
     )
 }

@@ -13,9 +13,7 @@ const SignIn: React.FC = () => {
             </div>
             <Input placeholder={'Введите логин'}/>
             <Input placeholder={'Введите пароль'} type={'password'}/>
-            <div className={style.linkInPageWrapper}>
-                <MyLink to={RECOVERY_PAGE} text={'Забыли пароль?'}/>
-            </div>
+            <MyLink to={RECOVERY_PAGE} text={'Забыли пароль?'}/>
             <div className={style.checkboxBlockWrapper}>
                 <div className={style.smallText}>
                     Запомнить меня
@@ -23,9 +21,7 @@ const SignIn: React.FC = () => {
                 <Input type={'checkbox'}/>
             </div>
             <Button name={'войти'}/>
-            <div className={style.linkInPageWrapper}>
-                <MyLink to={REGISTRATION_PAGE} text={'Зарегистрироваться'}/>
-            </div>
+            <MyLink to={REGISTRATION_PAGE} text={'Зарегистрироваться'}/>
         </div>
     )
 }

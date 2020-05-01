@@ -9,9 +9,9 @@ type OwnPropsType = {
 type PropsType = OwnPropsType
 const MyLink: React.FC<PropsType> = (props) => {
     return (
-        <span className={style.linkInHeaderWrapper}>
+        <div className={style.linkInPageWrapper}>
             <NavLink to={props.to}>{props.text}</NavLink>
-        </span>
+        </div>
     )
 }
 export default MyLink
