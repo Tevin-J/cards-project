@@ -4,8 +4,6 @@ import Button from "../../../../n1-main/m1-ui/common/Button/Button";
 import Input from "../../../../n1-main/m1-ui/common/Input/Input";
 import MyLink from "../../../../n1-main/m1-ui/common/MyLink/MyLink";
 import {RECOVERY_PAGE, REGISTRATION_PAGE} from "../../../../n1-main/m1-ui/routes/Routes";
-import {useDispatch} from "react-redux";
-import {toLogin} from "../l2-bll/loginReducer";
 
 type OwnProps = {
     email: string
@@ -14,12 +12,19 @@ type OwnProps = {
     setPassword: (text: string) => void
     rememberMe: boolean
     setRememberMe: (value: boolean) => void
+    setUser: () => void
+    isLoading: boolean
 }
 type PropsType = OwnProps
 const SignIn: React.FC<PropsType> = (props) => {
-    const dispatch = useDispatch()
     const onLoginClick = () => {
-        dispatch(toLogin(props.email, props.password, props.rememberMe))
+        props.setUser()
+    }
+    /*show preloader during api request is going on*/
+    if (props.isLoading) {
+        return (
+            <div className={style.largeText}>Loading...</div>
+        )
     }
     return (
         <div>
