@@ -4,21 +4,20 @@ import Input from "../../../../n1-main/m1-ui/common/Input/Input";
 import MyLink from "../../../../n1-main/m1-ui/common/MyLink/MyLink";
 import {SIGN_IN_PAGE} from "../../../../n1-main/m1-ui/routes/Routes";
 import Button from "../../../../n1-main/m1-ui/common/Button/Button";
-import {useDispatch} from "react-redux";
-import { toRegister } from "../r2-bll/regReducer";
+
 
 type OwnProps = {
     email: string
     enterEmail: (text: string) => void
     password: string
     enterPassword: (text: string) => void
+    addUser: () => void
 
 }
 type PropsType = OwnProps
 const Registration: React.FC<PropsType> = (props) => {
-    const dispatch = useDispatch()
     const onRegisterClick = () => {
-        dispatch(toRegister(props.email, props.password))
+        props.addUser()
     }
     return (
         <div>
