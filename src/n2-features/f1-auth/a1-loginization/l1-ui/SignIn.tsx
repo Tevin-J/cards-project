@@ -4,6 +4,7 @@ import Button from "../../../../n1-main/m1-ui/common/Button/Button";
 import Input from "../../../../n1-main/m1-ui/common/Input/Input";
 import MyLink from "../../../../n1-main/m1-ui/common/MyLink/MyLink";
 import {RECOVERY_PAGE, REGISTRATION_PAGE} from "../../../../n1-main/m1-ui/routes/Routes";
+import spinner from '../../../../n1-main/m1-ui/common/assets/spinner.gif'
 
 type OwnProps = {
     email: string
@@ -20,16 +21,13 @@ const SignIn: React.FC<PropsType> = (props) => {
     const onLoginClick = () => {
         props.setUser()
     }
-    /*show preloader during api request is going on*/
-    if (props.isLoading) {
-        return (
-            <div className={style.largeText}>Loading...</div>
-        )
-    }
     return (
         <div>
             <div className={style.largeText}>
                 Sign-in page
+            </div>
+            <div className={style.spinner}>
+                {props.isLoading ? <img src={spinner} alt='spinner'/> : ''}
             </div>
             <Input placeholder={'Введите e-mail'} value={props.email} onChange={props.setEmail}/>
             <Input placeholder={'Введите пароль'} type={'password'} value={props.password} onChange={props.setPassword}/>

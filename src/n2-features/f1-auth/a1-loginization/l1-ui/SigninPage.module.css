@@ -10,3 +10,10 @@
 .largeText {
     composes: largeText from '../../../../index.css';
 }
+.spinner {
+    height: 40px;
+}
+.spinner img{
+    background-color: #015668;
+    height: 100%;
+}
