@@ -13,7 +13,7 @@ const initialState = {
     isSuccess: false,
     isError: false
 }
-const registrationReducer = (state: InitialStateType = initialState, action: any): InitialStateType => {
+const registrationReducer = (state: InitialStateType = initialState, action: RegisterActionsType): InitialStateType => {
     switch (action.type) {
         case REGISTER_IS_SUCCESS:
             return {
@@ -29,7 +29,7 @@ const registrationReducer = (state: InitialStateType = initialState, action: any
     return state
 }
 
-type LoginActionType = InferActionTypes<typeof actions>
+type RegisterActionsType = InferActionTypes<typeof actions>
 
 const actions = {
     registerIsSuccess: (value: boolean) => ({type: REGISTER_IS_SUCCESS, value}),
@@ -37,13 +37,14 @@ const actions = {
 }
 
 
-type ThunkType = ThunkAction<void, AppStateType, unknown, LoginActionType>
+type ThunkType = ThunkAction<void, AppStateType, unknown, RegisterActionsType>
 
 export const toRegister = (email: string, password: string): ThunkType =>
-    async (dispatch: ThunkDispatch<AppStateType, unknown, LoginActionType>, getState: () => AppStateType) => {
+    async (dispatch: ThunkDispatch<AppStateType, unknown, RegisterActionsType>, getState: () => AppStateType) => {
     debugger
         try {
             const response = await registerApi.register(email, password)
+            debugger
             dispatch(actions.registerIsSuccess(true))
             dispatch(actions.registerIsError(false))
         } catch (err) {

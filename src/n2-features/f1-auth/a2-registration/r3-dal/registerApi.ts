@@ -8,10 +8,8 @@ type RegisterResponseType = {
         __v: number
         _id: string
     }
-    success: boolean
-} | {
+    success: boolean,
     error: string
-    in: string
 }
 
 const instance = axios.create({
