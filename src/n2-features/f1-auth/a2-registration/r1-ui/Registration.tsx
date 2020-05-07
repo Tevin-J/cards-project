@@ -1,5 +1,5 @@
 import React from "react";
-import style from './Registratio nPage.module.css'
+import style from './RegistrationPage.module.css'
 import Input from "../../../../n1-main/m1-ui/common/Input/Input";
 import MyLink from "../../../../n1-main/m1-ui/common/MyLink/MyLink";
 import {SIGN_IN_PAGE} from "../../../../n1-main/m1-ui/routes/Routes";
