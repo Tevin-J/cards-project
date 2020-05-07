@@ -62,3 +62,7 @@ code {
   color: #015668;
   padding-bottom: 20px;
 }
+.textError {
+  composes: smallText;
+  color: red;
+}

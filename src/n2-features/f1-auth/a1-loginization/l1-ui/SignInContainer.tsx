@@ -21,13 +21,13 @@ const SignInContainer: React.FC = () => {
         setRememberMe(false)
     }
     /*used hook useSelector instead of MSTP func*/
-    const {isLoading, isSuccess} = useSelector((store: AppStateType) => store.authReducer.loginReducer)
+    const {isLoading, isSuccess, isError} = useSelector((store: AppStateType) => store.authReducer.loginReducer)
     /*if request for login is succeed, redirect is going on to profilePage*/
     if (isSuccess) {
         return <Redirect to={PROFILE_PAGE}/>
     }
     return (
-        <SignIn email={email} setEmail={setEmail} password={password} setPassword={setPassword}
+        <SignIn email={email} setEmail={setEmail} password={password} setPassword={setPassword} isError={isError}
                 rememberMe={rememberMe} setRememberMe={setRememberMe} setUser={setUser} isLoading={isLoading}/>
     )
 }

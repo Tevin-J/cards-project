@@ -17,3 +17,6 @@
     background-color: #015668;
     height: 100%;
 }
+.textError {
+    composes: textError from '../../../../index.css';
+}
