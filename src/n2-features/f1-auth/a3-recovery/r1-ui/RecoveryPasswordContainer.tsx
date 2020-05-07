@@ -15,6 +15,7 @@ const RecoveryPasswordContainer: React.FC = () => {
 
     const recoveryPass = () => {
         dispatch(toRecoveryPass(email))
+        enterEmail("")
     };
 
     const {isLoading, isSuccess, isError} = useSelector
