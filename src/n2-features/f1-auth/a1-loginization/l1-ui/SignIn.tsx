@@ -27,10 +27,10 @@ const SignIn: React.FC<PropsType> = (props) => {
             <div className={style.largeText}>
                 Sign-in page
             </div>
-            <div className={style.spinner}>
-                {props.isLoading ? <img src={spinner} alt='spinner'/> : ''}
+            <div className={style.statusWrapper}>
+                {props.isLoading ? <img src={spinner} alt='spinner'/>
+                : props.isError && props.email === '' && props.password === '' ? <div className={style.textError}><p>Произошла ошибка</p></div> : null}
             </div>
-            {props.isError && props.email === '' && props.password === '' ? <div className={style.textError}>Произошла ошибка</div> : null}
             <Input placeholder={'Введите e-mail'} value={props.email} onChange={props.setEmail}/>
             <Input placeholder={'Введите пароль'} type={'password'} value={props.password} onChange={props.setPassword}/>
             <MyLink to={RECOVERY_PAGE} text={'Забыли пароль?'}/>

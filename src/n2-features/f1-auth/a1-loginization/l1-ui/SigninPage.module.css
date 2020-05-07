@@ -10,13 +10,15 @@
 .largeText {
     composes: largeText from '../../../../index.css';
 }
-.spinner {
+.statusWrapper {
     height: 40px;
 }
-.spinner img{
+.statusWrapper img{
     background-color: #015668;
     height: 100%;
 }
 .textError {
     composes: textError from '../../../../index.css';
+    display: flex;
+    flex-direction: column;
 }
