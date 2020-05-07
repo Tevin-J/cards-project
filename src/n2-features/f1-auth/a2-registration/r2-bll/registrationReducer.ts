@@ -2,14 +2,13 @@ import { ThunkAction, ThunkDispatch } from "redux-thunk"
 import {AppStateType, InferActionTypes} from "../../../../n1-main/m2-bll/store"
 import {registerApi} from "../r3-dal/registerApi";
 
-
-
 type InitialStateType = typeof initialState
 const initialState = {
     isSuccess: false,
     isError: false,
     isLoading: false
 }
+
 const registrationReducer = (state: InitialStateType = initialState, action: RegisterActionsType): InitialStateType => {
     switch (action.type) {
         case "App/AuthBlock/RegistrationReducer/REGISTER_IS_SUCCESS":

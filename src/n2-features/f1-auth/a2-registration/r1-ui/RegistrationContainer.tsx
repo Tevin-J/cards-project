@@ -6,8 +6,6 @@ import {AppStateType} from "../../../../n1-main/m2-bll/store";
 import {SIGN_IN_PAGE} from "../../../../n1-main/m1-ui/routes/Routes";
 import { Redirect } from "react-router-dom";
 
-
-
 const RegistrationContainer: React.FC = () => {
     const [email, enterEmail] = useState<string>('');
     const [password, enterPassword] = useState<string>('');

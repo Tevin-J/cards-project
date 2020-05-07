@@ -4,4 +4,13 @@
 
 .textError {
     composes: textError from '../../../../index.css';
+    display: flex;
+    flex-direction: column;
+}
+.statusWrapper {
+    height: 40px;
+}
+.statusWrapper img{
+    background-color: #015668;
+    height: 100%;
 }

@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-
 type RegisterResponseType = {
     addedUser: {
         email: string
@@ -15,9 +14,9 @@ type RegisterResponseType = {
 const instance = axios.create({
     baseURL: "https://neko-cafe-back.herokuapp.com/auth/"
 })
+
 export const registerApi = {
     register(email: string, password: string) {
-        debugger
         return (
             instance.post<RegisterResponseType>("register",
                 {

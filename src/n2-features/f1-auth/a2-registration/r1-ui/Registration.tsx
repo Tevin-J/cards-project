@@ -27,19 +27,21 @@ const Registration: React.FC<PropsType> = (props) => {
     }
     return (
         <div>
-        <div className={style.largeText}>
-            Registration page
-        </div>
-            <div className={style.spinner}>
-                {props.isLoading ? <img src={spinner} alt='spinner'/> : ''}
+            <div className={style.largeText}>
+                Registration page
             </div>
-            {props.isError && props.email === '' && props.password === '' ? <div className={style.textError}>Произошла ошибка</div> : null}
+            <div className={style.statusWrapper}>
+                {props.isLoading ? <img src={spinner} alt='spinner'/>
+                    : props.isError && props.email === '' && props.password === ''
+                        ? <div className={style.textError}><p>Произошла ошибка</p></div>
+                        : null}
+            </div>
             <Input placeholder={'Введите e-mail'} value={props.email} onChange={props.enterEmail}/>
             <Input placeholder={'Введите пароль'} type={'password'} value={props.password} onChange={props.enterPassword}/>
             <Input placeholder={'Введите пароль повторно'} type={'password'} value={props.passwordRepeat} onChange={props.enterPasswordRepeat}/>
             {!props.samePassword && <div className={style.textError}>Пароли не совпадают</div>}
             <Button name={'Регистрация'} onClick={onRegisterClick} disabled={props.isLoading}/>
-            <MyLink to={SIGN_IN_PAGE} text={'sign-in'}/>
+            <MyLink to={SIGN_IN_PAGE} text={'У меня уже есть аккаунт'}/>
         </div>
     )
 }

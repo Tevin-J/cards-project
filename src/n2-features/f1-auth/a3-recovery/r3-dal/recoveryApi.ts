@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-
 type RecoveryResponseType = {
     success: boolean
     error: string
@@ -9,6 +8,7 @@ type RecoveryResponseType = {
 const instance = axios.create({
     baseURL: "https://neko-cafe-back.herokuapp.com/auth/"
 })
+
 export const recoveryApi = {
     forgot(email: string) {
         return (

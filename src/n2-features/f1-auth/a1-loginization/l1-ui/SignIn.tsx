@@ -29,7 +29,9 @@ const SignIn: React.FC<PropsType> = (props) => {
             </div>
             <div className={style.statusWrapper}>
                 {props.isLoading ? <img src={spinner} alt='spinner'/>
-                : props.isError && props.email === '' && props.password === '' ? <div className={style.textError}><p>Произошла ошибка</p></div> : null}
+                    : props.isError && props.email === '' && props.password === ''
+                        ? <div className={style.textError}><p>Произошла ошибка</p></div>
+                        : null}
             </div>
             <Input placeholder={'Введите e-mail'} value={props.email} onChange={props.setEmail}/>
             <Input placeholder={'Введите пароль'} type={'password'} value={props.password} onChange={props.setPassword}/>
@@ -41,7 +43,7 @@ const SignIn: React.FC<PropsType> = (props) => {
                 <Input type={'checkbox'} value={props.rememberMe} onChange={props.setRememberMe}/>
             </div>
             <Button name={'войти'} onClick={onLoginClick} disabled={props.isLoading}/>
-            <MyLink to={REGISTRATION_PAGE} text={'Зарегистрироваться'}/>
+            <MyLink to={REGISTRATION_PAGE} text={'У меня еще нет аккаунта'}/>
         </div>
     )
 }
