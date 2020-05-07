@@ -1,3 +1,8 @@
 .largeText {
     composes: largeText from '../../../../index.css';
 }
+
+.smallText {
+    composes: smallText from '../../../../index.css';
+    color: red
+}

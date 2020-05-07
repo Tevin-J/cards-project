@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Registration from "./Registration";
 import {useDispatch, useSelector} from "react-redux";
 import { toRegister } from "../r2-bll/registrationReducer";
@@ -9,16 +9,24 @@ import { Redirect } from "react-router-dom";
 
 
 const RegistrationContainer: React.FC = () => {
-    const [email, enterEmail] = useState<string>('')
-    const [password, enterPassword] = useState<string>('')
+    const [email, enterEmail] = useState<string>('');
+    const [password, enterPassword] = useState<string>('');
+    const [passwordRepeat, enterPasswordRepeat] = useState<string>('');
+    const [samePassword, setSamePassword] = useState<boolean>(false);
 
-    const dispatch = useDispatch()
+    useEffect(()=> {
+        if(passwordRepeat === password) setSamePassword(true)
+        else setSamePassword(false)
+    }, [passwordRepeat])
+
+
+    const dispatch = useDispatch();
 
     const addUser = () => {
-        dispatch(toRegister(email, password))
+        dispatch(toRegister(email, password));
         enterEmail('')
         enterPassword('')
-    }
+    };
 
     const {isSuccess} = useSelector((store: AppStateType) => store.authReducer.registrationReducer);
 
@@ -26,9 +34,11 @@ const RegistrationContainer: React.FC = () => {
        return <Redirect to={SIGN_IN_PAGE}/>
     }
     return (
-        <Registration email={email} enterEmail={enterEmail} password={password} enterPassword={enterPassword} addUser={addUser}/>
+        <Registration email={email} enterEmail={enterEmail} password={password} enterPassword={enterPassword}
+                      passwordRepeat={passwordRepeat} enterPasswordRepeat={enterPasswordRepeat} samePassword={samePassword}
+                      addUser={addUser}/>
     );
 
 
-}
+};
 export default RegistrationContainer
