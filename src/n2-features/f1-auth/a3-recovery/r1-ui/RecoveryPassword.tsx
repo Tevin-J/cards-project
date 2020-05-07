@@ -27,7 +27,7 @@ const RecoveryPassword: React.FC<PropsType> = (props) => {
             <div className={style.spinner}>
                 {props.isLoading ? <img src={spinner} alt='spinner'/> : ''}
             </div>
-            {props.isError || (props.email === '') ? <div className={style.smallText}>Указанный адрес не найден</div> : null}
+            {props.isError && (props.email === '') ? <div className={style.errorText}>Указанный адрес не найден</div> : null}
             <div>
                 <Input placeholder={'Введите e-mail'} type={'text'}
                        onChange={props.enterEmail}
