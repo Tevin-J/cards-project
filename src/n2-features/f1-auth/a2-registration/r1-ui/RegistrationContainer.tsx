@@ -28,7 +28,7 @@ const RegistrationContainer: React.FC = () => {
         enterPassword('')
     };
 
-    const {isSuccess} = useSelector((store: AppStateType) => store.authReducer.registrationReducer);
+    const {isLoading, isSuccess, isError} = useSelector((store: AppStateType) => store.authReducer.registrationReducer);
 
     if (isSuccess) {
        return <Redirect to={SIGN_IN_PAGE}/>
@@ -36,7 +36,7 @@ const RegistrationContainer: React.FC = () => {
     return (
         <Registration email={email} enterEmail={enterEmail} password={password} enterPassword={enterPassword}
                       passwordRepeat={passwordRepeat} enterPasswordRepeat={enterPasswordRepeat} samePassword={samePassword}
-                      addUser={addUser}/>
+                      addUser={addUser} isLoading={isLoading} isError={isError}/>
     );
 
 

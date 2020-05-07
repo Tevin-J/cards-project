@@ -2,7 +2,6 @@
     composes: largeText from '../../../../index.css';
 }
 
-.smallText {
-    composes: smallText from '../../../../index.css';
-    color: red
+.textError {
+    composes: textError from '../../../../index.css';
 }
