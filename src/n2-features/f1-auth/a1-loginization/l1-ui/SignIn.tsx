@@ -38,7 +38,7 @@ const SignIn: React.FC<PropsType> = (props) => {
                 </div>
                 <Input type={'checkbox'} value={props.rememberMe} onChange={props.setRememberMe}/>
             </div>
-            <Button name={'войти'} onClick={onLoginClick}/>
+            <Button name={'войти'} onClick={onLoginClick} disabled={props.isLoading}/>
             <MyLink to={REGISTRATION_PAGE} text={'Зарегистрироваться'}/>
         </div>
     )
