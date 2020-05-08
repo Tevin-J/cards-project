@@ -43,6 +43,7 @@ type ThunkType = ThunkAction<void, AppStateType, unknown, RecoveryPassActionType
 export const toRecoveryPass = (email: string): ThunkType =>
     async (dispatch: ThunkDispatch<AppStateType, unknown, RecoveryPassActionType>, getState: () => AppStateType) => {
         dispatch(actions.recoveryLoading(true))
+
         try {
             const response = await recoveryApi.forgot(email);
             if (response.data.success)dispatch(actions.recoverySuccess(true))

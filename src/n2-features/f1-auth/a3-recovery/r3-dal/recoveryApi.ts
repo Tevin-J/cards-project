@@ -15,8 +15,8 @@ export const recoveryApi = {
             instance.post<RecoveryResponseType>("forgot",
                 {
                     email: email,
-                    html1: "<a href='http://localhost:3000/#/reset-password/",
-                    html2: "'>reset-password-link</a>"
+                    html1: "<a href='http://localhost:3000/#/new_password/",
+                    html2: "'>new-password-link</a>"
                 }
             )
         )
