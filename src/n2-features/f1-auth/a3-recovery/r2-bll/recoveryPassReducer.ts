@@ -44,7 +44,9 @@ export const toRecoveryPass = (email: string): ThunkType =>
     async (dispatch: ThunkDispatch<AppStateType, unknown, RecoveryPassActionType>, getState: () => AppStateType) => {
         dispatch(actions.recoveryLoading(true))
         try {
-            const response = await recoveryApi.forgot(email);
+            const html1 = "<a href='http://localhost:3000/#/new_password/"
+            const html2 = "'>reset-password-link</a>"
+            const response = await recoveryApi.forgot(email, html1, html2);
             if (response.data.success)dispatch(actions.recoverySuccess(true))
             dispatch(actions.recoveryError(false))
             dispatch(actions.recoveryLoading(false))
