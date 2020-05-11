@@ -15,15 +15,16 @@ const RegistrationContainer: React.FC = () => {
     useEffect(()=> {
         if(passwordRepeat === password) setSamePassword(true)
         else setSamePassword(false)
-    }, [passwordRepeat])
+    }, [passwordRepeat]);
 
 
     const dispatch = useDispatch();
 
     const addUser = () => {
         dispatch(toRegister(email, password));
-        enterEmail('')
-        enterPassword('')
+        enterEmail('');
+        enterPassword('');
+        enterPasswordRepeat('');
     };
 
     const {isLoading, isSuccess, isError} = useSelector((store: AppStateType) => store.authReducer.registrationReducer);

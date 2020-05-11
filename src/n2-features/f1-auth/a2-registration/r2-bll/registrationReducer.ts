@@ -14,17 +14,19 @@ const registrationReducer = (state: InitialStateType = initialState, action: Reg
         case "App/AuthBlock/RegistrationReducer/REGISTER_IS_SUCCESS":
             return {
                 ...state,
+                isLoading: false,
                 isSuccess: action.value
             };
         case "App/AuthBlock/RegistrationReducer/REGISTER_IS_ERROR":
             return {
                 ...state,
+                isLoading: false,
                 isError: true
             };
         case "App/AuthBlock/RegistrationReducer/REGISTER_IS_LOADING":
             return {
                 ...state,
-                isLoading: action.value
+                isLoading: true
             }
     }
     return state
@@ -35,7 +37,7 @@ type RegisterActionsType = InferActionTypes<typeof actions>
 const actions = {
     registerIsSuccess: (value: boolean) => ({type: "App/AuthBlock/RegistrationReducer/REGISTER_IS_SUCCESS", value} as const),
     registerIsError: () => ({type: "App/AuthBlock/RegistrationReducer/REGISTER_IS_ERROR"} as const),
-    registerIsLoading: (value: boolean) => ({type: "App/AuthBlock/RegistrationReducer/REGISTER_IS_LOADING", value} as const)
+    registerIsLoading: () => ({type: "App/AuthBlock/RegistrationReducer/REGISTER_IS_LOADING"} as const)
 }
 
 
@@ -43,13 +45,11 @@ type ThunkType = ThunkAction<void, AppStateType, unknown, RegisterActionsType>
 
 export const toRegister = (email: string, password: string): ThunkType =>
     async (dispatch: ThunkDispatch<AppStateType, unknown, RegisterActionsType>, getState: () => AppStateType) => {
-        dispatch(actions.registerIsLoading(true));
+        dispatch(actions.registerIsLoading());
         try {
             const response = await registerApi.register(email, password);
-            dispatch(actions.registerIsLoading(false));
             if (response.data.success)dispatch(actions.registerIsSuccess(true))
         } catch (err) {
-            dispatch(actions.registerIsLoading(false));
             dispatch(actions.registerIsError());
             console.error(err);
         }
