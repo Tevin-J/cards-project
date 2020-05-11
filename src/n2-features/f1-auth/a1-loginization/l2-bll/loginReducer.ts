@@ -13,12 +13,16 @@ const loginReducer = (state: InitialStateType = initialState, action: LoginActio
         case 'App/AuthBlock/LoginReducer/TOGGLE_IS_SUCCESS':
             return {
                 ...state,
-                isSuccess: action.value
+                isSuccess: action.value,
+                isError: false,
+                isLoading: false
             }
         case 'App/AuthBlock/LoginReducer/TOGGLE_IS_ERROR':
             return {
                 ...state,
-                isError: action.value
+                isError: action.value,
+                isSuccess: false,
+                isLoading: false
             }
         case 'App/AuthBlock/LoginReducer/TOGGLE_IS_LOADING':
             return {
@@ -42,12 +46,8 @@ export const toLogin = (email: string, password: string, rememberMe: boolean): T
         dispatch(actions.toggleIsLoading(true))
         try {
             const response = await loginApi.login(email, password, rememberMe)
-            dispatch(actions.toggleIsLoading(false))
             dispatch(actions.toggleIsSuccess(true))
-            dispatch(actions.toggleIsError(false))
         } catch (e) {
-            dispatch(actions.toggleIsLoading(false))
-            dispatch(actions.toggleIsSuccess(false))
             dispatch(actions.toggleIsError(true))
             console.error(e);
         }
