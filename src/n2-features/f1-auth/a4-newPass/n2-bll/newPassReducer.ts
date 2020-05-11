@@ -13,12 +13,16 @@ const newPassReducer = (state: InitialStateType = initialState, action: NewPassA
         case 'App/AuthBlock/newPassReducer/PASS_IS_SUCCESS':
             return {
                 ...state,
-                isSuccess: action.value
+                isSuccess: action.value,
+                isError: false,
+                isLoading: false
             }
         case 'App/AuthBlock/newPassReducer/PASS_IS_ERROR':
             return {
                 ...state,
-                isError: action.value
+                isError: action.value,
+                isSuccess: false,
+                isLoading: false
             }
         case 'App/AuthBlock/newPassReducer/PASS_IS_LOADING':
             return {
@@ -42,12 +46,8 @@ export const toSetPassword = (password: string, resetPasswordToken: string): Thu
         dispatch(actions.passIsLoading(true))
         try {
             const response = await newPassApi.setNewPass(password, resetPasswordToken)
-            dispatch(actions.passIsLoading(false))
             dispatch(actions.passIsSuccess(true))
-            dispatch(actions.passIsError(false))
         } catch (e) {
-            dispatch(actions.passIsLoading(false))
-            dispatch(actions.passIsSuccess(false))
             dispatch(actions.passIsError(true))
             console.error(e);
         }
