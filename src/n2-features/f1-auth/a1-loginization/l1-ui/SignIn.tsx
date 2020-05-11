@@ -8,9 +8,9 @@ import spinner from '../../../../n1-main/m1-ui/common/assets/spinner.gif'
 
 type OwnProps = {
     email: string
-    setEmail: (text: string) => void
+    setEmail: (value: string) => void
     password: string
-    setPassword: (text: string) => void
+    setPassword: (value: string) => void
     rememberMe: boolean
     setRememberMe: (value: boolean) => void
     setUser: () => void
@@ -33,14 +33,14 @@ const SignIn: React.FC<PropsType> = (props) => {
                         ? <div className={style.textError}><p>Произошла ошибка</p></div>
                         : null}
             </div>
-            <Input placeholder={'Введите e-mail'} value={props.email} onChange={props.setEmail}/>
-            <Input placeholder={'Введите пароль'} type={'password'} value={props.password} onChange={props.setPassword}/>
+            <Input placeholder={'Введите e-mail'} value={props.email} onInputTextChange={props.setEmail}/>
+            <Input placeholder={'Введите пароль'} type={'password'} value={props.password} onInputTextChange={props.setPassword}/>
             <MyLink to={RECOVERY_PAGE} text={'Забыли пароль?'}/>
             <div className={style.checkboxBlockWrapper}>
                 <div className={style.smallText}>
                     Запомнить меня
                 </div>
-                <Input type={'checkbox'} value={props.rememberMe} onChange={props.setRememberMe}/>
+                <Input type={'checkbox'} value={props.rememberMe} onInputCheckboxChange={props.setRememberMe}/>
             </div>
             <Button name={'войти'} onClick={onLoginClick} disabled={props.isLoading}/>
             <MyLink to={REGISTRATION_PAGE} text={'У меня еще нет аккаунта'}/>

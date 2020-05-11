@@ -30,7 +30,7 @@ const RecoveryPassword: React.FC<PropsType> = (props) => {
                         : null}
             </div>
             <Input placeholder={'Введите e-mail'} type={'text'}
-                   onChange={props.enterEmail}
+                   onInputTextChange={props.enterEmail}
                    value={props.email}/>
             <Button name={'Отправить'} onClick={props.recoveryPass}
                     disabled={props.isLoading}/>

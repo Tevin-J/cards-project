@@ -37,9 +37,9 @@ const NewPassword: React.FC<PropsType> = (props) => {
                         : null}
             </div>
             <Input placeholder={'Введите пароль'} type={'password'} value={props.password}
-                   onChange={props.setPassword}/>
+                   onInputTextChange={props.setPassword}/>
             <Input placeholder={'Введите пароль повторно'} type={'password'} value={props.passwordRepeat}
-                   onChange={props.setPasswordRepeat}/>
+                   onInputTextChange={props.setPasswordRepeat}/>
             {!props.samePassword && <div className={style.textError}>Пароли не совпадают</div>}
             <Button name={'Регистрация'} onClick={onSetNewPassClick} disabled={props.isLoading}/>
             <MyLink to={SIGN_IN_PAGE} text={'Перейти к логинизации'}/>
