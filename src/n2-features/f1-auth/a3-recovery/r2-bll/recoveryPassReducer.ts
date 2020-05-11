@@ -43,7 +43,6 @@ type ThunkType = ThunkAction<void, AppStateType, unknown, RecoveryPassActionType
 export const toRecoveryPass = (email: string): ThunkType =>
     async (dispatch: ThunkDispatch<AppStateType, unknown, RecoveryPassActionType>, getState: () => AppStateType) => {
         dispatch(actions.recoveryLoading(true))
-
         try {
             const html1 = "<a href='http://localhost:3000/#/new_password/"
             const html2 = "'>reset-password-link</a>"
