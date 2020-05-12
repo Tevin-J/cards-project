@@ -1,7 +1,7 @@
 import React from "react";
 import style from './Header.module.css'
 import {
-    NEW_PASSWORD_PAGE, PROFILE_PAGE,
+    NEW_PASSWORD_PAGE, PACKS_KIT_PAGE, PROFILE_PAGE,
     RECOVERY_PAGE,
     REGISTRATION_PAGE, SIGN_IN_PAGE
 } from "../routes/Routes";
@@ -24,6 +24,9 @@ const Header: React.FC = () => {
             </span>
             <span className={style.linkInHeaderWrapper}>
                 <MyLink to={PROFILE_PAGE} text={'profile'}/>
+            </span>
+            <span className={style.linkInHeaderWrapper}>
+                <MyLink to={PACKS_KIT_PAGE} text={'packs'}/>
             </span>
         </div>
     )

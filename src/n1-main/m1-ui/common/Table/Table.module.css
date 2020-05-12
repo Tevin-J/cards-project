@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.tableWrapper {
+    border: 1px solid;
+}
+.tableWrapper td, th {
+    border: 1px solid;
+}
+.tableHead {
+    background-color: #33ee33;
+}
+.tableRow {
+    background-color: #35ff;
+}

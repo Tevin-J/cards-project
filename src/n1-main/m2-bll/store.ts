@@ -1,9 +1,11 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import thunk from 'redux-thunk'
 import authReducer from "../../n2-features/f1-auth/authReducer";
+import cardsReducer from "../../n2-features/f2-cards/cardsReducer";
 
 const rootReducer = combineReducers({
-    authReducer: authReducer
+    authReducer: authReducer,
+    cardsReducer: cardsReducer
 })
 type RootReducerType = typeof rootReducer
 export type AppStateType = ReturnType<RootReducerType>
