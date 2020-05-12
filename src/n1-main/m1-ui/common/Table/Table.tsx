@@ -1,13 +1,14 @@
 import React from 'react';
 import style from './Table.module.css'
-import {PacksKitType} from "../../../../n2-features/f2-cards/c1-packsKit/p2-bll/packsKitReducer";
+import {PackType} from "../../../../n2-features/f2-cards/c1-packsKit/p2-bll/packsKitReducer";
+import {CardType} from "../../../../n2-features/f2-cards/c2-cardsKit/c2-bll/cardsKitReducer";
 
 type OwnPropsType = {
-    packs: PacksKitType
+    kit: Array<CardType|PackType>
 }
 type PropsType = OwnPropsType
 const Table: React.FC<PropsType> = (props) => {
-    const lengthOfKit = Object.keys(props.packs[0]).length
+    const lengthOfKit = Object.keys(props.kit[0]).length
     return (
         <div className={style.tableWrapper}>
             <table>
@@ -16,11 +17,11 @@ const Table: React.FC<PropsType> = (props) => {
                     display: "grid",
                     gridTemplateColumns: `repeat(${lengthOfKit}, 1fr)`
                 }} className={style.tableHead}>
-                    {Object.keys(props.packs[0]).map(key => <th>{key}</th>)}
+                    {Object.keys(props.kit[0]).map(key => <th>{key}</th>)}
                 </tr>
                 </thead>
                 <tbody>
-                {props.packs.map(p => {
+                {props.kit.map(p => {
                     return (
                         <tr style={{
                             display: "grid",

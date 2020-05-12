@@ -1,15 +1,16 @@
 import Table from "../../../../n1-main/m1-ui/common/Table/Table";
 import React from "react";
-import {PacksKitType} from "../p2-bll/packsKitReducer";
+import {CardsKitType} from "../c2-bll/cardsKitReducer";
+
 
 type OwnPropsType = {
-    kit: PacksKitType
+    kit: CardsKitType
 }
 type PropsType = OwnPropsType
 
-const PacksKit: React.FC<PropsType> = (props) => {
+const CardsKit: React.FC<PropsType> = (props) => {
     return (
         <Table {...props}/>
     )
 }
-export default PacksKit
+export default CardsKit

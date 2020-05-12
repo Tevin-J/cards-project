@@ -6,7 +6,8 @@ type InitialStateType = typeof initialState
 const initialState = {
     isSuccess: false,
     isError: false,
-    isLoading: false
+    isLoading: false,
+    token: ''
 }
 const loginReducer = (state: InitialStateType = initialState, action: LoginActionType): InitialStateType => {
     switch (action.type) {
@@ -15,7 +16,8 @@ const loginReducer = (state: InitialStateType = initialState, action: LoginActio
                 ...state,
                 isSuccess: action.value,
                 isError: false,
-                isLoading: false
+                isLoading: false,
+                token: action.token
             }
         case 'App/AuthBlock/LoginReducer/TOGGLE_IS_ERROR':
             return {
@@ -34,7 +36,7 @@ const loginReducer = (state: InitialStateType = initialState, action: LoginActio
 }
 /*actions*/
 const actions = {
-    toggleIsSuccess: (value: boolean) => ({type: 'App/AuthBlock/LoginReducer/TOGGLE_IS_SUCCESS', value} as const),
+    toggleIsSuccess: (value: boolean, token: string) => ({type: 'App/AuthBlock/LoginReducer/TOGGLE_IS_SUCCESS', value, token} as const),
     toggleIsError: (value: boolean) => ({type: 'App/AuthBlock/LoginReducer/TOGGLE_IS_ERROR', value} as const),
     toggleIsLoading: (value: boolean) => ({type: 'App/AuthBlock/LoginReducer/TOGGLE_IS_LOADING', value} as const)
 }
@@ -46,11 +48,10 @@ export const toLogin = (email: string, password: string, rememberMe: boolean): T
         dispatch(actions.toggleIsLoading(true))
         try {
             const response = await loginApi.login(email, password, rememberMe)
-            dispatch(actions.toggleIsSuccess(true))
+            dispatch(actions.toggleIsSuccess(true, response.data.token))
         } catch (e) {
             dispatch(actions.toggleIsError(true))
             console.error(e);
         }
-
     }
 export default loginReducer

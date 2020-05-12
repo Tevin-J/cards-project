@@ -6,7 +6,7 @@ import {AppStateType} from "../../../../n1-main/m2-bll/store";
 const PacksKitContainer: React.FC = () => {
     const {packsKit} = useSelector((store: AppStateType) => store.cardsReducer.packsKitReducer)
     return (
-        <PacksKit packs={packsKit}/>
+        <PacksKit kit={packsKit}/>
     )
 }
 export default PacksKitContainer

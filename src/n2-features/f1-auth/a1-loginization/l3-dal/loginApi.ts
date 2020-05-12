@@ -10,7 +10,6 @@ type LoginResponseType = {
     __v: number
     _id: string
     success: boolean
-} | {
     error: string
     in: string
 }

@@ -6,13 +6,15 @@ import RecoveryPasswordPage from "../../../n2-features/f1-auth/a3-recovery/r1-ui
 import RegistrationPage from "../../../n2-features/f1-auth/a2-registration/r1-ui/RegistrationPage";
 import NewPasswordPage from "../../../n2-features/f1-auth/a4-newPass/n1-ui/NewPasswordPage";
 import PacksKitPage from "../../../n2-features/f2-cards/c1-packsKit/p1-ui/PaksKitPage";
+import CardsKitPage from "../../../n2-features/f2-cards/c2-cardsKit/c1-ui/CardsKitPage";
 
 export const SIGN_IN_PAGE = '/sign_in'
 export const REGISTRATION_PAGE = '/registration'
 export const RECOVERY_PAGE = '/recovery_password'
 export const NEW_PASSWORD_PAGE = '/new_password'
 export const PROFILE_PAGE = '/profile'
-export const PACKS_KIT_PAGE = '/packs'
+export const PACKS_KIT_PAGE = '/kit'
+export const CARDS_KIT_PAGE = '/cards'
 
 export const Routes: React.FC = () => {
     return (
@@ -23,6 +25,7 @@ export const Routes: React.FC = () => {
             <Route path={NEW_PASSWORD_PAGE} render={() => <NewPasswordPage/>}/>
             <Route path={PROFILE_PAGE} render={() => <ProfilePage/>}/>
             <Route path={PACKS_KIT_PAGE} render={() => <PacksKitPage/>}/>
+            <Route path={CARDS_KIT_PAGE} render={() => <CardsKitPage/>}/>
         </>
     )
 }
