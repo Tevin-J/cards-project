@@ -10,7 +10,8 @@ type PropsType = OwnPropsType
 
 const CardsKit: React.FC<PropsType> = (props) => {
     return (
-        <Table {...props}/>
+        /*<Table {...props}/>*/
+        <div>заглушка, пока не сделаю функционал packsKitReducera</div>
     )
 }
 export default CardsKit

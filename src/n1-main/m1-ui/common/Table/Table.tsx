@@ -1,10 +1,9 @@
 import React from 'react';
 import style from './Table.module.css'
-import {PackType} from "../../../../n2-features/f2-cards/c1-packsKit/p2-bll/packsKitReducer";
-import {CardType} from "../../../../n2-features/f2-cards/c2-cardsKit/c2-bll/cardsKitReducer";
+import {CardType} from "../../../../n2-features/f2-cards/c1-packsKit/p3-dal/packsApi";
 
 type OwnPropsType = {
-    kit: Array<CardType|PackType>
+    kit: Array<CardType>
 }
 type PropsType = OwnPropsType
 const Table: React.FC<PropsType> = (props) => {

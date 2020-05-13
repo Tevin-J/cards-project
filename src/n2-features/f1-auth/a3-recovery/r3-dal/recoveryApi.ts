@@ -6,13 +6,13 @@ type RecoveryResponseType = {
 }
 
 const instance = axios.create({
-    baseURL: "https://neko-cafe-back.herokuapp.com/auth/"
+    baseURL: "https://cards-nya-back.herokuapp.com/1.0"
 })
 
 export const recoveryApi = {
     forgot(email: string, html1: string, html2: string) {
         return (
-            instance.post<RecoveryResponseType>("forgot",
+            instance.post<RecoveryResponseType>("/auth/forgot",
                 {
                     email: email,
                     html1: html1,

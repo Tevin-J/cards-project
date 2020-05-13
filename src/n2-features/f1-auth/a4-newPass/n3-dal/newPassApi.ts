@@ -6,12 +6,12 @@ type NewPassResponseType = {
     error: string
 }
 const instance = axios.create({
-    baseURL: `https://neko-cafe-back.herokuapp.com/auth/`
+    baseURL: `https://cards-nya-back.herokuapp.com/1.0`
 })
 export const newPassApi = {
     setNewPass(password: string, resetPasswordToken: string) {
         return (
-            instance.post<NewPassResponseType>(`set-new-password`,
+            instance.post<NewPassResponseType>(`/auth/set-new-password`,
                 {
                     password: password,
                     resetPasswordToken: resetPasswordToken

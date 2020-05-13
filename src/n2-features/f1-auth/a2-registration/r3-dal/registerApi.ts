@@ -12,13 +12,13 @@ type RegisterResponseType = {
 }
 
 const instance = axios.create({
-    baseURL: "https://neko-cafe-back.herokuapp.com/auth/"
+    baseURL: "https://cards-nya-back.herokuapp.com/1.0"
 })
 
 export const registerApi = {
     register(email: string, password: string) {
         return (
-            instance.post<RegisterResponseType>("register",
+            instance.post<RegisterResponseType>("/auth/register",
                 {
                     email: email,
                     password: password
