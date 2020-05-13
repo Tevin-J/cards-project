@@ -14,12 +14,12 @@ type LoginResponseType = {
     in: string
 }
 const instance = axios.create({
-    baseURL: `https://neko-cafe-back.herokuapp.com/auth/`
+    baseURL: `https://cards-nya-back.herokuapp.com/1.0`
 })
 export const loginApi = {
     login(email: string, password: string, rememberMe: boolean) {
         return (
-            instance.post<LoginResponseType>(`login`,
+            instance.post<LoginResponseType>(`/auth/login`,
                 {
                     email: email,
                     password: password,

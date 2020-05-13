@@ -2,7 +2,7 @@ import Button from "../../../../n1-main/m1-ui/common/Button/Button";
 import React from 'react'
 
 export type CardsKitType = Array<CardType>
-export type CardType = {
+type CardType = {
     id: number,
     question: string,
     answer: string,
