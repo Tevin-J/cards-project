@@ -22,7 +22,7 @@ export type CardType = {
     type: string
     created: string
     updated: string
-    currentPage: number,
+    currentPage: number
     pageSize: number
 }
 type AddPackResponseType = {

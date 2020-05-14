@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Pagination.module.css';
-/*import cn from 'classnames';*/
+
 
 type OwnProps = {
     totalItemsCount: number

@@ -12,7 +12,8 @@ type PropsType = OwnPropsType
 const PacksKit: React.FC<PropsType> = (props) => {
     return<div>
         <Table {...props}/>
-        <Pagination blockSize={3} currentPage={1} onPageChanged={() => {}} pageSize={6} totalItemsCount={props.totalItemsCount}/>
+        <Pagination blockSize={3} currentPage={props.kit[0].currentPage} onPageChanged={() => {}}
+                    pageSize={props.kit[0].pageSize} totalItemsCount={props.totalItemsCount}/>
         </div>
 };
 

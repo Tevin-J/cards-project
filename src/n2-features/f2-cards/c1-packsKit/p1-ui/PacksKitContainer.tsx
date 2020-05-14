@@ -8,7 +8,8 @@ const PacksKitContainer: React.FC = () => {
     const {packsKit} = useSelector((store: AppStateType) => store.cardsReducer.packsKitReducer)
     const {token} = useSelector((store: AppStateType) => store.authReducer.loginReducer)
     const {totalItemsCount} = useSelector((store: AppStateType) => store.cardsReducer.packsKitReducer)
-    currentPage pageSize
+    const {currentPage} = useSelector((store: AppStateType) => store.cardsReducer.packsKitReducer.packsKit[0])
+    const {pageSize} = useSelector((store: AppStateType) => store.cardsReducer.packsKitReducer.packsKit[0])
 
     const dispatch = useDispatch()
     useEffect(() => {

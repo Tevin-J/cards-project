@@ -67,4 +67,6 @@ export const toGetPacks = (token: string, currentPage: number, pageSize: number)
             console.error(e);
         }
     }
+
+
 export default packsKitReducer
