@@ -22,6 +22,8 @@ export type CardType = {
     type: string
     created: string
     updated: string
+    currentPage: number,
+    pageSize: number
 }
 type AddPackResponseType = {
     newCardsPack: CardsPackType
@@ -42,9 +44,10 @@ const instance = axios.create({
     baseURL: `https://cards-nya-back.herokuapp.com/1.0/`
 })
 export const packsApi = {
-    getPacks(token: string) {
+    getPacks(token: string, currentPage: number, pageSize: number) {
         return (
-            instance.get<GetPacksResponseType>(`/cards/pack?token=${token}`)
+            instance.get<GetPacksResponseType>(`/cards/pack?token=${token}
+            page=${currentPage}&count=${pageSize}`)
         )
     },
     addPack(cardsPack: CardsPackType, token: string) {

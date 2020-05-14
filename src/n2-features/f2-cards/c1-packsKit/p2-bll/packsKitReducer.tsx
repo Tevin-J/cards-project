@@ -11,9 +11,11 @@ export type PacksKitType = Array<CardType>
     rating: number
     grade: number
     button: JSX.Element
+
 }*/
 type InitialStateType = {
-    packsKit: PacksKitType
+    packsKit: PacksKitType,
+    totalItemsCount: number
 }
 const initialState: InitialStateType = {
     packsKit: [
@@ -29,31 +31,36 @@ const initialState: InitialStateType = {
             type: 'string',
             created: 'string',
             updated: 'string',
+            currentPage: 1,
+            pageSize: 3
+
         }
-    ]
-}
+    ],
+    totalItemsCount: 0
+};
 
 const packsKitReducer = (state: InitialStateType = initialState, action: PacksKitActionType): InitialStateType => {
     switch (action.type) {
         case "App/CardsBlock/PacksKitReducer/GET_PACKS_SUCCESS":
             return {
                 ...state,
-                packsKit: action.cardPacks
+                packsKit: action.cardPacks,
+                totalItemsCount: action.cardPacksTotalCount
             }
     }
     return state
-}
+};
 const actions = {
-    getPacksSuccess: (cardPacks: Array<CardType>) => ({type: 'App/CardsBlock/PacksKitReducer/GET_PACKS_SUCCESS', cardPacks} as const)
-}
+    getPacksSuccess: (cardPacks: Array<CardType>, cardPacksTotalCount:number) => ({type: 'App/CardsBlock/PacksKitReducer/GET_PACKS_SUCCESS', cardPacks, cardPacksTotalCount} as const)
+};
 type PacksKitActionType = InferActionTypes<typeof actions>
 
 type ThunkType = ThunkAction<void, AppStateType, unknown, PacksKitActionType>
-export const toGetPacks = (token: string): ThunkType =>
+export const toGetPacks = (token: string, currentPage: number, pageSize: number): ThunkType =>
     async (dispatch: ThunkDispatch<AppStateType, unknown, PacksKitActionType>, getState: () => AppStateType) => {
         try {
-            const response = await packsApi.getPacks(token)
-            dispatch(actions.getPacksSuccess(response.data.cardPacks))
+            const response = await packsApi.getPacks(token, currentPage, pageSize)
+            dispatch(actions.getPacksSuccess(response.data.cardPacks, response.data.cardPacksTotalCount))
             console.log(response);
         }
         catch (e) {

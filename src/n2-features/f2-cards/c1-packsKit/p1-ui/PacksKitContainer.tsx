@@ -7,14 +7,18 @@ import {toGetPacks} from "../p2-bll/packsKitReducer";
 const PacksKitContainer: React.FC = () => {
     const {packsKit} = useSelector((store: AppStateType) => store.cardsReducer.packsKitReducer)
     const {token} = useSelector((store: AppStateType) => store.authReducer.loginReducer)
+    const {totalItemsCount} = useSelector((store: AppStateType) => store.cardsReducer.packsKitReducer)
+    currentPage pageSize
 
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(toGetPacks(token))
+        dispatch(toGetPacks(token, currentPage, pageSize))
     }, [])
 
+
+
     return (
-        <PacksKit kit={packsKit}/>
+        <PacksKit kit={packsKit} totalItemsCount={totalItemsCount}/>
     )
 }
 export default PacksKitContainer

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Pagination.module.css';
-import cn from 'classnames';
+/*import cn from 'classnames';*/
 
 type OwnProps = {
     totalItemsCount: number
@@ -30,13 +30,16 @@ const Pagination: React.FC<PropsType> = (props) => {
 
             {pages.filter(p => p >= leftBlockPageNumber && p <= rightBlockPageNumber)
                 .map(p => {
-                    return <span className={ cn({
+                    return <span
+                        /*className={
+                        ({
                         [styles.selectedPage] : props.currentPage ===p
-                    }, styles.pageNumber) }
+                    }, styles.pageNumber) }*/
                                  key={p}
-                                 onClick={(e) => {
+                                 /*onClick={(e) => {
                                      props.onPageChanged(p);
-                                 }}>{p}</span>
+                                 }}*/
+                    >{p}</span>
                 })}
             {blockCount > blockNumber &&
             <button onClick={ () => {setBlockNumber(blockNumber + 1) }}>NEXT</button>}
